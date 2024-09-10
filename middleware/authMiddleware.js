@@ -4,7 +4,7 @@ import "dotenv/config";
 
 const { SECRET_KEY } = process.env;
 
-const authMiddleware = async (req, res, next) => {
+export const authMiddleware = async (req, res, next) => {
     try {
         // Check if authorization header is present
         const { authorization = '' } = req.headers;
@@ -35,4 +35,3 @@ const authMiddleware = async (req, res, next) => {
     }
 };
 
-export default authMiddleware;
